@@ -10,20 +10,20 @@ class Solution(object):
         :type n: int
         :rtype: Optional[ListNode]
         """
-        length = 0
-        current_node = head
-        while current_node:
-            length += 1
-            current_node = current_node.next
+        len = 0
+        curr = head
+        while curr:
+            len += 1
+            curr = curr.next
 
-        if n == length:
+        if n == len:
             return head.next
 
-        current_node = head
-        for _ in range(length - n - 1):
-            current_node = current_node.next
+        curr = head
+        for _ in range(len - n - 1):
+            curr = curr.next
 
-        if current_node.next:
-            current_node.next = current_node.next.next
+        if curr.next:
+            curr.next = curr.next.next
 
         return head
